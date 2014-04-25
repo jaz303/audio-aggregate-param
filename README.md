@@ -64,6 +64,7 @@ The following are proxied to the corresponding method of each aggregated `AudioP
   * `aggregate.exponentialRampToValueAtTime(value, endTime)`
   * `aggregate.setTargetAtTime(timeConstant, target, startTime)`
   * `aggregate.setValueCurveAtTime(values, startTime, duration)`
+  * `aggregate.cancelScheduledValues(time)`
 
 ## License
 
