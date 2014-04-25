@@ -16,24 +16,26 @@ Group multiple `AudioParam`s into a single aggregate parameter for centralised m
 
 ## Example
 
-	var osc1 = context.createOscillator();
-	var osc2 = context.createOscillator();
-	var osc3 = context.createOscillator();
+```javascript
+var osc1 = context.createOscillator();
+var osc2 = context.createOscillator();
+var osc3 = context.createOscillator();
 
-	var AudioAggregateParam = require('audio-aggregate-param');
-	
-	var param = new AudioAggregateParam();
-	param.add(osc1.frequency);
-	param.add(osc2.frequency, 2);
-	param.add(osc3.frequency, 4);
+var AudioAggregateParam = require('audio-aggregate-param');
 
-	// set frequency of osc1, osc2 and osc3
-	// osc1 = 220, osc2 = 440, osc3 = 880
-	param.value = 220;
+var param = new AudioAggregateParam();
+param.add(osc1.frequency);
+param.add(osc2.frequency, 2);
+param.add(osc3.frequency, 4);
 
-	// ramp oscillator frequencies over the next 2 seconds
-	// osc -> 440, osc2 -> 880, osc3 -> 1760
-	param.exponentialRampToValueAtTime(context.currentTime + 2, 440);
+// set frequency of osc1, osc2 and osc3
+// osc1 = 220, osc2 = 440, osc3 = 880
+param.value = 220;
+
+// ramp oscillator frequencies over the next 2 seconds
+// osc -> 440, osc2 -> 880, osc3 -> 1760
+param.exponentialRampToValueAtTime(context.currentTime + 2, 440);
+```
 
 ## API
 
