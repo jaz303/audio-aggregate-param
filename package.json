@@ -1,6 +1,6 @@
 {
   "name": "audio-aggregate-param",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Aggregate multiple AudioParam instances into a single object",
   "main": "index.js",
   "scripts": {
