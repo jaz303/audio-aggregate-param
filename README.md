@@ -30,11 +30,20 @@ param.add(osc3.frequency, 4);
 
 // set frequency of osc1, osc2 and osc3
 // osc1 = 220, osc2 = 440, osc3 = 880
-param.value = 220;
+param.cancelScheduledValues(context.currentTime);
+param.setValueAtTime(220, context.currentTime);
 
 // ramp oscillator frequencies over the next 2 seconds
 // osc -> 440, osc2 -> 880, osc3 -> 1760
 param.exponentialRampToValueAtTime(context.currentTime + 2, 440);
+
+osc1.connect(context.destination);
+osc2.connect(context.destination);
+osc3.connect(context.destination);
+
+osc1.start(0);
+osc2.start(0);
+osc3.start(0);
 ```
 
 ## API
