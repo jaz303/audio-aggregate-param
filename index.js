@@ -59,12 +59,12 @@ AggregateParam.prototype.setValueCurveAtTime = function(values, startTime, durat
         });
     } else {
 
-        var numValues = values.length;
+        var numValues   = values.length,
+            myValues    = new Float32Array(numValues);
 
         this.params.forEach(function(p) {
 
-            var factor      = p.factor,
-                myValues    = new Float32Array(numValues);
+            var factor = p.factor;
             
             for (var i = 0; i < numValues; ++i) {
                 myValues[i] = values[i] * factor;
