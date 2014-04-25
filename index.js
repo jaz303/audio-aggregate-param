@@ -76,8 +76,8 @@ AggregateParam.prototype.setValueCurveAtTime = function(values, startTime, durat
     }
 }
 
-AggregateParam.prototype.cancelScheduledValues = function() {
+AggregateParam.prototype.cancelScheduledValues = function(time) {
     this.params.forEach(function(p) {
-        p.param.cancelScheduledValues();
+        p.param.cancelScheduledValues(time);
     });
 }
