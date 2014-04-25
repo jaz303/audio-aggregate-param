@@ -4,6 +4,10 @@ var AggregateParam = module.exports = function() {
 }
 
 AggregateParam.prototype.add = function(param, factor) {
+
+    if (!(param instanceof AudioParam)) {
+        throw new Error("supplied argument is not an AudioParam");
+    }
     
     factor = (typeof factor === 'undefined') ? 1.0 : factor;
     if (factor != 1) {
